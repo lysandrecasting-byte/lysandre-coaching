@@ -379,22 +379,58 @@ h1 {
   .btn { width: 100%; }
   .container { width: min(100% - 32px, 1180px); }
   .section { padding: 42px 0; }
-  .icon-grid.seven {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 18px 0;
+  /* Mobile : outils regroupÃ©s en grille compacte 2 colonnes.
+     La version desktop/tablette reste inchangÃ©e. */
+  .tools .section-title,
+  .section h2 {
+    margin-bottom: 28px;
   }
+
+  .icon-grid.seven {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0;
+  }
+
   .icon-grid.four,
   .takeaway-grid.three,
   .info-strip { grid-template-columns: 1fr; }
+
   .icon-grid.seven article {
     border-left: 0 !important;
     border-top: 1px solid var(--line);
-    padding: 22px 10px;
-    min-height: 150px;
+    padding: 18px 10px 20px;
+    min-height: 126px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
+
   .icon-grid.seven article:nth-child(1),
   .icon-grid.seven article:nth-child(2) { border-top: 0 !important; }
-  .icon-grid.seven .icon { font-size: 2.25rem; margin-bottom: 14px; }
+  .icon-grid.seven article:nth-child(even) { border-left: 1px solid var(--line) !important; }
+
+  .icon-grid.seven article:last-child {
+    grid-column: 1 / -1;
+    width: 50%;
+    justify-self: center;
+    border-left: 0 !important;
+  }
+
+  .icon-grid.seven .icon {
+    font-size: 2.55rem;
+    margin-bottom: 12px;
+  }
+
+  .icon-grid.seven h3 {
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+  }
+
+  .tools .center-note {
+    margin-top: 24px;
+    font-size: 0.95rem;
+  }
   .icon-grid.four article,
   .takeaway-grid article,
   .info-item { border-left: 0 !important; border-top: 1px solid var(--line); padding-top: 24px; }
