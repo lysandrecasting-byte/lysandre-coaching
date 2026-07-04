@@ -391,9 +391,29 @@ h1 {
     gap: 0;
   }
 
-  .icon-grid.four,
-  .takeaway-grid.three,
-  .info-strip { grid-template-columns: 1fr; }
+.icon-grid.four {
+  grid-template-columns: 1fr 1fr;
+  row-gap: 22px;
+}
+
+.takeaway-grid.three {
+  grid-template-columns: 1fr;
+}
+
+.info-strip {
+  grid-template-columns: 1fr;
+}
+
+.takeaway-grid article {
+  justify-content: center;
+  text-align: center;
+  gap: 16px;
+}
+
+.takeaway-grid article p {
+  max-width: 260px;
+  margin: 0 auto;
+}
 
   .icon-grid.seven article {
     border-left: 0 !important;
